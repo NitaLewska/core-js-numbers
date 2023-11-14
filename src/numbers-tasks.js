@@ -264,8 +264,12 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  const fibo = [0, 1];
+  for (let i = 2; i <= index; i += 1) {
+    fibo.push(fibo[i - 1] + fibo[i - 2]);
+  }
+  return fibo[index];
 }
 
 /**
@@ -279,8 +283,12 @@ function getFibonacciNumber(/* index */) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  let sum = 0;
+  for (let i = 0; i <= n; i += 1) {
+    sum += i;
+  }
+  return sum;
 }
 
 /**
@@ -312,8 +320,8 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  return Math.log2(num) === Math.floor(Math.log2(num));
 }
 
 /**
@@ -419,8 +427,8 @@ function getNumberValue(number) {
  * 5        => true
  * '5'      => false
  */
-function isNumber(/* number */) {
-  throw new Error('Not implemented');
+function isNumber(number) {
+  return !Number.isNaN(number) && Number.isFinite(number);
 }
 
 /**
@@ -434,8 +442,8 @@ function isNumber(/* number */) {
  * 5.1  => false
  * '5'  => false
  */
-function isInteger(/* number */) {
-  throw new Error('Not implemented');
+function isInteger(number) {
+  return Number.isInteger(number);
 }
 
 /**
@@ -466,8 +474,8 @@ function getFloatOnString(str) {
  * '1.234', 2           => 1
  * '10', 8              => 1
  */
-function getIntegerOnString(/* str, base */) {
-  throw new Error('Not implemented');
+function getIntegerOnString(str, base) {
+  return Number.parseInt(str, base);
 }
 
 /**
@@ -555,8 +563,8 @@ function getIntegerPartNumber(number) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(/* x1, x2, x3 */) {
-  throw new Error('Not implemented');
+function getSumOfNumbers(x1, x2, x3) {
+  return (x1 + x2 + x3).toFixed(10);
 }
 
 /**
@@ -571,8 +579,8 @@ function getSumOfNumbers(/* x1, x2, x3 */) {
  * -5, -6 => -5
  * 0, 5   => 5
  */
-function getMaxNumber(/* firstNumber, secondNumber */) {
-  throw new Error('Not implemented');
+function getMaxNumber(firstNumber, secondNumber) {
+  return Math.max(firstNumber, secondNumber);
 }
 
 /**
@@ -601,8 +609,8 @@ function getRandomInteger(min, max) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(/* a, b */) {
-  throw new Error('Not implemented');
+function getHypotenuse(a, b) {
+  return Math.hypot(a, b);
 }
 
 /**
